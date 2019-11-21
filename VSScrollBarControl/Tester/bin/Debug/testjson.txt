@@ -1,0 +1,30 @@
+[
+   {
+	"Name":"VisualStudio",
+	"Primary_Background":"0, 122, 204",
+	"Secondary_Background":"0, 0, 0",
+        "Arrow_Normal":"85, 85, 88",
+        "Arrow_Down":"0, 122, 204",
+        "Arrow_Hover":"28, 151, 238",
+        "Border_Normal":"67, 67, 70",
+        "Gutter_Normal":"72, 72, 75",
+	"Gutter_Hover":"0, 0, 0",
+        "Thumb_Normal":"85, 85, 88",
+        "Thumb_Down":"239, 235, 239",
+        "Thumb_Hover":"158, 158, 158"
+   },
+   {
+	"Name":"VisualStudio 2",
+	"Primary_Background":"0, 122, 204",
+	"Secondary_Background":"0, 0, 0",
+        "Arrow_Normal":"85, 85, 88",
+        "Arrow_Down":"0, 122, 204",
+        "Arrow_Hover":"28, 151, 238",
+        "Border_Normal":"67, 67, 70",
+        "Gutter_Normal":"72, 72, 75",
+	"Gutter_Hover":"0, 0, 0",
+        "Thumb_Normal":"85, 85, 88",
+        "Thumb_Down":"239, 235, 239",
+        "Thumb_Hover":"158, 158, 158"
+   }
+]

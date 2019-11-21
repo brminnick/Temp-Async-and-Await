@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSScrollBarControl", "VSScrollBarControl\VSScrollBarControl.csproj", "{291304D6-75B6-4623-83FC-1B4FC543D5FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tester", "Tester\Tester.csproj", "{66125158-035F-4353-8FE1-A078E9A5A85A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{291304D6-75B6-4623-83FC-1B4FC543D5FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{291304D6-75B6-4623-83FC-1B4FC543D5FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{291304D6-75B6-4623-83FC-1B4FC543D5FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{291304D6-75B6-4623-83FC-1B4FC543D5FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66125158-035F-4353-8FE1-A078E9A5A85A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66125158-035F-4353-8FE1-A078E9A5A85A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66125158-035F-4353-8FE1-A078E9A5A85A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66125158-035F-4353-8FE1-A078E9A5A85A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {93BD9356-9AE0-4A70-A2E0-DF81B0FB051F}
+	EndGlobalSection
+EndGlobal
