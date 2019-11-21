@@ -20,10 +20,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AsyncAwaitBestPractices;
 using static ThemeLoader;
 
 namespace VSScrollBarControl
@@ -112,7 +114,11 @@ namespace VSScrollBarControl
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer |
                      ControlStyles.UserPaint | ControlStyles.ResizeRedraw | ControlStyles.CacheText, true);
 
-            if (UseTheme) { ApplyTheme(); }
+            if (UseTheme)
+            {
+                ApplyTheme().SafeFireAndForget();
+                InitializeThemes().SafeFireAndForget();
+            }
         }
 
         public async Task<bool> ApplyTheme()
@@ -393,31 +399,29 @@ namespace VSScrollBarControl
         [Category("Custom"), Description(""), DefaultValue("(none)"), TypeConverter(typeof(SelectedObjectConverter))]
         public string Themes
         {
-            get
-            {
-                string[] buffer = new string[0];
-
-                async void GetThemeList()
-                {
-                    buffer = Task.Run(async () => await GetThemeNames("testjson.txt").ConfigureAwait(false)).Result;
-                }
-
-                GetThemeList();
-
-                foreach  (string s in buffer)
-                {
-                    Debug.Print($"Theme: {s}");
-                }
-
-                SelectedObjectConverter.StringObjects = new SelectedObjectConverter.StandardValuesCollection(buffer);
-                //SelectedObjectConverter.StringObjects = new SelectedObjectConverter.StandardValuesCollection(Task.Run(async () => await GetThemeNames("testjson.txt").ConfigureAwait(false)).Result);
-
-                return _Themes;
-            }
+            get => _Themes;
             set
             {
-                _Themes = value;
+                if (_Themes != value)
+                {
+                    _Themes = value;
+                    OnValueChanged(this, EventArgs.Empty);
+                }
             }
+        }
+
+        async Task InitializeThemes()
+        {
+            var buffer = await GetThemeNames("testjson.txt").ConfigureAwait(false);
+
+            foreach (string s in buffer)
+            {
+                Debug.Print($"Theme: {s}");
+            }
+
+            SelectedObjectConverter.StringObjects = new SelectedObjectConverter.StandardValuesCollection(buffer);
+            //SelectedObjectConverter.StringObjects = new SelectedObjectConverter.StandardValuesCollection(Task.Run(async () => await GetThemeNames("testjson.txt").ConfigureAwait(false)).Result);
+            Themes = buffer.FirstOrDefault() ?? NONE;
         }
 
 
@@ -425,7 +429,7 @@ namespace VSScrollBarControl
 
 
 
-    #region RemoteControl Object
+        #region RemoteControl Object
         private string _RemoteControl = NONE;
         public ScrollableControl RemoteObject;
         [Category("Custom"), Description("Specifies which Control you want to remotely scroll."), DefaultValue("(none)"), TypeConverter(typeof(SelectedObjectConverter))]
@@ -953,6 +957,7 @@ namespace VSScrollBarControl
                 
                 //}
 
+                //}
                 if ((ti.GutterWidth > SCROLLBAR_SIZE) && (ti.ThumbWidth < ti.GutterWidth)) { e.Graphics.FillRectangle(brushThumb, Thumber); }
 
                 if (BorderEdges)
