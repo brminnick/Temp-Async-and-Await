@@ -388,7 +388,7 @@ namespace VSScrollBarControl
     #endregion
 
 
-
+        /// <summary> Get a list of Themes and allow the user to select one in Design-Mode and Run-time mode </summary>
         private string _Themes = NONE;
         [Category("Custom"), Description(""), DefaultValue("(none)"), TypeConverter(typeof(SelectedObjectConverter))]
         public string Themes
