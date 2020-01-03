@@ -26,7 +26,7 @@ using static misc;
 
 public static class ThemeLoader
 {
-    public interface ITheme { public Task<bool> ApplyTheme(); }
+    public interface ITheme { public void ApplyTheme(); }
 
     public class Theme
     {
@@ -51,20 +51,36 @@ public static class ThemeLoader
 
     private const string DefaultThemeFIle = "Themes.json";
 
-    private static async Task<List<Theme>> GetThemes(string inFile = DefaultThemeFIle) =>
+    private static async Task<List<Theme>> GetThemesAsync(string inFile = DefaultThemeFIle) =>
                         (FileExists(inFile) ? new JavaScriptSerializer().Deserialize<List<Theme>>(await ReadTextAsync(inFile).ConfigureAwait(false)) : null);
+    private static List<Theme> GetThemesSync(string inFile = DefaultThemeFIle) =>
+                        (FileExists(inFile) ? new JavaScriptSerializer().Deserialize<List<Theme>>(ReadTextSync(inFile)) : null);
 
     /// <summary> Get the Color values of a named Theme. </summary>
-    public static async Task<Theme> GetValuesForTheme(string inTheme, string inFile = DefaultThemeFIle)
+    public static async Task<Theme> GetValuesForThemeAsync(string inTheme, string inFile = DefaultThemeFIle)
     {
-        List<Theme> buffer = await GetThemes(inFile).ConfigureAwait(false);
+        List<Theme> buffer = await GetThemesAsync(inFile).ConfigureAwait(false);
 
         return ((buffer != null) ? (Theme)(from i in buffer where i.Name == inTheme select i.Name) : null);
     }
 
-    public static async Task<string[]> GetThemeNames(string inFile = DefaultThemeFIle)
+    /// <summary> Get the Color values of a named Theme. </summary>
+    public static Theme GetValuesForThemeSync(string inTheme, string inFile = DefaultThemeFIle)
     {
-        List<Theme> buffer = await GetThemes(inFile).ConfigureAwait(false);
+        List<Theme> buffer = GetThemesSync(inFile);
+
+        return ((buffer != null) ? (Theme)(from i in buffer where i.Name == inTheme select i.Name) : null);
+    }
+
+    public static async Task<string[]> GetThemeNamesAsync(string inFile = DefaultThemeFIle)
+    {
+        List<Theme> buffer = await GetThemesAsync(inFile).ConfigureAwait(false);
+
+        return ((buffer != null) ? (from i in buffer select i.Name).ToArray() : new string[0]);
+    }
+    public static string[] GetThemeNamesSync(string inFile = DefaultThemeFIle)
+    {
+        List<Theme> buffer = GetThemesSync(inFile);
 
         return ((buffer != null) ? (from i in buffer select i.Name).ToArray() : new string[0]);
     }

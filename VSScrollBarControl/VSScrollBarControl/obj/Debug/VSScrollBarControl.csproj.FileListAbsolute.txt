@@ -1,0 +1,10 @@
+C:\Users\tibegato\Desktop\VSScrollBarControl\VSScrollBarControl\bin\Debug\VSScrollBarControl.dll
+C:\Users\tibegato\Desktop\VSScrollBarControl\VSScrollBarControl\bin\Debug\VSScrollBarControl.pdb
+C:\Users\tibegato\Desktop\VSScrollBarControl\VSScrollBarControl\obj\Debug\VSScrollBarControl.csprojAssemblyReference.cache
+C:\Users\tibegato\Desktop\VSScrollBarControl\VSScrollBarControl\obj\Debug\VSScrollBarControl.ControllerNode.resources
+C:\Users\tibegato\Desktop\VSScrollBarControl\VSScrollBarControl\obj\Debug\VSScrollBarControl.csproj.GenerateResource.cache
+C:\Users\tibegato\Desktop\VSScrollBarControl\VSScrollBarControl\obj\Debug\VSScrollBarControl.dll
+C:\Users\tibegato\Desktop\VSScrollBarControl\VSScrollBarControl\obj\Debug\VSScrollBarControl.pdb
+C:\Users\tibegato\Desktop\VSScrollBarControl\VSScrollBarControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\tibegato\Desktop\VSScrollBarControl\VSScrollBarControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\tibegato\Desktop\VSScrollBarControl\VSScrollBarControl\obj\Debug\VSScrollBarControl.csproj.CopyComplete

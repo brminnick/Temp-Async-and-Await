@@ -364,6 +364,7 @@
             this.vsScrollBarControl8.Orientation = System.Windows.Forms.ScrollOrientation.HorizontalScroll;
             this.vsScrollBarControl8.Size = new System.Drawing.Size(108, 19);
             this.vsScrollBarControl8.TabIndex = 76;
+            this.vsScrollBarControl8.Themes = "Gabby is a baby";
             this.vsScrollBarControl8.ThumbColor = System.Drawing.SystemColors.ControlDark;
             this.vsScrollBarControl8.ThumbDownColor = System.Drawing.SystemColors.Highlight;
             this.vsScrollBarControl8.ThumbHoverColor = System.Drawing.SystemColors.Highlight;
@@ -388,6 +389,7 @@
             this.vsScrollBarControl7.Orientation = System.Windows.Forms.ScrollOrientation.HorizontalScroll;
             this.vsScrollBarControl7.Size = new System.Drawing.Size(108, 19);
             this.vsScrollBarControl7.TabIndex = 75;
+            this.vsScrollBarControl7.Themes = "Gabby is a baby";
             this.vsScrollBarControl7.ThumbColor = System.Drawing.SystemColors.ControlDark;
             this.vsScrollBarControl7.ThumbDownColor = System.Drawing.SystemColors.Highlight;
             this.vsScrollBarControl7.ThumbHoverColor = System.Drawing.SystemColors.Highlight;
@@ -410,6 +412,7 @@
             this.vsScrollBarControl6.Orientation = System.Windows.Forms.ScrollOrientation.HorizontalScroll;
             this.vsScrollBarControl6.Size = new System.Drawing.Size(108, 19);
             this.vsScrollBarControl6.TabIndex = 74;
+            this.vsScrollBarControl6.Themes = "Gabby is a baby";
             this.vsScrollBarControl6.ThumbColor = System.Drawing.SystemColors.ControlDark;
             this.vsScrollBarControl6.ThumbDownColor = System.Drawing.SystemColors.Highlight;
             this.vsScrollBarControl6.ThumbHoverColor = System.Drawing.SystemColors.Highlight;
@@ -432,6 +435,7 @@
             this.vsScrollBarControl5.Orientation = System.Windows.Forms.ScrollOrientation.HorizontalScroll;
             this.vsScrollBarControl5.Size = new System.Drawing.Size(108, 19);
             this.vsScrollBarControl5.TabIndex = 73;
+            this.vsScrollBarControl5.Themes = "Gabby is a baby";
             this.vsScrollBarControl5.ThumbColor = System.Drawing.SystemColors.ControlDark;
             this.vsScrollBarControl5.ThumbDownColor = System.Drawing.SystemColors.Highlight;
             this.vsScrollBarControl5.ThumbHoverColor = System.Drawing.SystemColors.Highlight;
@@ -454,6 +458,7 @@
             this.vsScrollBarControl3.Orientation = System.Windows.Forms.ScrollOrientation.HorizontalScroll;
             this.vsScrollBarControl3.Size = new System.Drawing.Size(108, 19);
             this.vsScrollBarControl3.TabIndex = 70;
+            this.vsScrollBarControl3.Themes = "Gabby is a baby";
             this.vsScrollBarControl3.ThumbColor = System.Drawing.SystemColors.ControlDark;
             this.vsScrollBarControl3.ThumbDownColor = System.Drawing.SystemColors.Highlight;
             this.vsScrollBarControl3.ThumbHoverColor = System.Drawing.SystemColors.Highlight;
@@ -476,6 +481,7 @@
             this.vsScrollBarControl4.Orientation = System.Windows.Forms.ScrollOrientation.HorizontalScroll;
             this.vsScrollBarControl4.Size = new System.Drawing.Size(108, 19);
             this.vsScrollBarControl4.TabIndex = 67;
+            this.vsScrollBarControl4.Themes = "Gabby is a baby";
             this.vsScrollBarControl4.ThumbColor = System.Drawing.SystemColors.ControlDark;
             this.vsScrollBarControl4.ThumbDownColor = System.Drawing.SystemColors.Highlight;
             this.vsScrollBarControl4.ThumbHoverColor = System.Drawing.SystemColors.Highlight;
@@ -541,9 +547,9 @@
             this.vsScrollBarControl1.MultiScrollMode = false;
             this.vsScrollBarControl1.Name = "vsScrollBarControl1";
             this.vsScrollBarControl1.Orientation = System.Windows.Forms.ScrollOrientation.HorizontalScroll;
+            this.vsScrollBarControl1.RemoteControl = "panel1";
             this.vsScrollBarControl1.Size = new System.Drawing.Size(144, 19);
             this.vsScrollBarControl1.TabIndex = 50;
-            this.vsScrollBarControl1.Themes = "VSScrollBarControl";
             this.vsScrollBarControl1.ThumbColor = System.Drawing.SystemColors.ControlDark;
             this.vsScrollBarControl1.ThumbDownColor = System.Drawing.SystemColors.Highlight;
             this.vsScrollBarControl1.ThumbHoverColor = System.Drawing.SystemColors.Highlight;
