@@ -1,0 +1,12 @@
+C:\Users\tibegato\Desktop\VSScrollBarControl\Tester\bin\Debug\Tester.exe.config
+C:\Users\tibegato\Desktop\VSScrollBarControl\Tester\bin\Debug\Tester.exe
+C:\Users\tibegato\Desktop\VSScrollBarControl\Tester\bin\Debug\Tester.pdb
+C:\Users\tibegato\Desktop\VSScrollBarControl\Tester\bin\Debug\VSScrollBarControl.dll
+C:\Users\tibegato\Desktop\VSScrollBarControl\Tester\bin\Debug\VSScrollBarControl.pdb
+C:\Users\tibegato\Desktop\VSScrollBarControl\Tester\obj\Debug\Tester.csprojAssemblyReference.cache
+C:\Users\tibegato\Desktop\VSScrollBarControl\Tester\obj\Debug\Tester.Form1.resources
+C:\Users\tibegato\Desktop\VSScrollBarControl\Tester\obj\Debug\Tester.Properties.Resources.resources
+C:\Users\tibegato\Desktop\VSScrollBarControl\Tester\obj\Debug\Tester.csproj.GenerateResource.cache
+C:\Users\tibegato\Desktop\VSScrollBarControl\Tester\obj\Debug\Tester.csproj.CopyComplete
+C:\Users\tibegato\Desktop\VSScrollBarControl\Tester\obj\Debug\Tester.exe
+C:\Users\tibegato\Desktop\VSScrollBarControl\Tester\obj\Debug\Tester.pdb

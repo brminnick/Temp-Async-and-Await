@@ -23,6 +23,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AsyncAwaitBestPractices;
@@ -121,9 +122,9 @@ namespace VSScrollBarControl
             }
         }
 
-        public async Task<bool> ApplyTheme()
+        public async void ApplyTheme()
         {
-            Theme buffer = await GetValuesForTheme("Visual Studio");
+            Theme buffer = await GetValuesForThemeAsync("Visual Studio");
 
             if (buffer != null)
             {
@@ -137,10 +138,10 @@ namespace VSScrollBarControl
                 ThumbDownColor = buffer.Thumb_Down;
                 ThumbHoverColor = buffer.Thumb_Hover;
 
-                return true;
+                //return true;
             }
 
-            return false;
+            //return false;
         }
 
         protected override void OnHandleCreated(EventArgs e)
@@ -380,10 +381,18 @@ namespace VSScrollBarControl
         [Browsable(false)] public override Color BackColor { get; set; }
         [Browsable(false)] public override Image BackgroundImage { get; set; }
         [Browsable(false)] public override ImageLayout BackgroundImageLayout { get; set; }
-    #endregion Hidden Properties
+        #endregion Hidden Properties
 
     #region StringConverter Class
         class SelectedObjectConverter : StringConverter
+        {
+            public static StandardValuesCollection StringObjects = new StandardValuesCollection(new string[0]);
+
+            public override bool GetStandardValuesSupported(ITypeDescriptorContext context) => true;
+
+            public override StandardValuesCollection GetStandardValues(ITypeDescriptorContext context) => StringObjects;
+        }
+        class SelectedObjectConverter2 : StringConverter
         {
             public static StandardValuesCollection StringObjects = new StandardValuesCollection(new string[0]);
 
@@ -395,6 +404,7 @@ namespace VSScrollBarControl
 
 
 
+        /// <summary> Get a list of Themes and allow the user to select one in Design-Mode and Run-time mode </summary>
         private string _Themes = NONE;
         [Category("Custom"), Description(""), DefaultValue("(none)"), TypeConverter(typeof(SelectedObjectConverter))]
         public string Themes
@@ -567,7 +577,7 @@ namespace VSScrollBarControl
 
         public async void dumb()
         {
-            string[] test = await GetThemeNames("testjson.txt");
+            string[] test = await GetThemeNamesAsync("testjson.txt");
 
             foreach (string item in test)
             {
@@ -575,7 +585,7 @@ namespace VSScrollBarControl
             }
         }
 
-        #region RemoteControl Object Events
+    #region RemoteControl Object Events
         private void RemoteObjectLayoutChanged(object sender, LayoutEventArgs e) => SetLayoutScrollValuesFor(RemoteObject);
 
         private void RemoteObjectDisposed(object sender, EventArgs e) => RemoteControl = NONE;
